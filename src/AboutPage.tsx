@@ -1,20 +1,17 @@
 import React from 'react';
 import './App.css';
-import { Link } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
 
 function AboutPage() {
   return (
-    <>
+    <Container>
       <main>
         <h2>About me</h2>
         <p>
           My name is lipeiran
         </p>
       </main>
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
-    </>
+    </Container>
   );
 }
 

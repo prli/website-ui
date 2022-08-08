@@ -4,11 +4,12 @@ import { Routes, Route } from "react-router-dom";
 import ErrorNotFoundPage from './ErrorNotFoundPage';
 import AboutPage from './AboutPage';
 import HomePage from './HomePage';
+import MenuBar from './MenuBar';
 
 function App() {
   return (
-    <div className="App">
-      <h1 >Welcome to lipeiran.dev!</h1>
+    <div>
+      <MenuBar/>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="about" element={<AboutPage />} />

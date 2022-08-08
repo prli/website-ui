@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Link } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
 
 function HomePage() {
   return (
-    <>
-      <main className="App-header">
+    <Container>
+      <main>
         <h2>Welcome to the homepage!</h2>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -14,7 +14,6 @@ function HomePage() {
         </p>
         <p>
           <a
-            className="App-link"
             href="https://reactjs.org"
             target="_blank"
             rel="noopener noreferrer"
@@ -24,7 +23,6 @@ function HomePage() {
         </p>
         <p>
           <a
-            className="App-link"
             href="https://cdkworkshop.com/"
             target="_blank"
             rel="noopener noreferrer"
@@ -33,10 +31,7 @@ function HomePage() {
           </a>
         </p>
       </main>
-      <nav>
-        <Link to="/about">About</Link>
-      </nav>
-    </>
+    </Container>
   );
 }
 
