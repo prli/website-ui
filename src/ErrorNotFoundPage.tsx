@@ -6,8 +6,8 @@ function ErrorNotFoundPage() {
   return (
     <Container>
       <main>
-        <h2>404 Error</h2>
-        <p>
+        <h1 className="text-light">404 Error</h1>
+        <p className="text-light">
           Page Not Found
         </p>
       </main>

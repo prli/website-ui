@@ -7,12 +7,12 @@ function HomePage() {
   return (
     <Container>
       <main>
-        <h2>Welcome to the homepage!</h2>
+        <h1 className="text-light">Welcome to the homepage!</h1>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <p className="text-light">
           Created using React and AWS CDK
         </p>
-        <p>
+        <p className="text-light">
           <a
             href="https://reactjs.org"
             target="_blank"
@@ -21,13 +21,22 @@ function HomePage() {
             Learn React
           </a>
         </p>
-        <p>
+        <p className="text-light">
           <a
             href="https://cdkworkshop.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
             Learn AWS CDK
+          </a>
+        </p>
+        <p className="text-light">
+          <a
+            href="https://react-bootstrap.github.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            React-Bootstrap
           </a>
         </p>
       </main>

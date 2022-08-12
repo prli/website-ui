@@ -6,8 +6,8 @@ function AboutPage() {
   return (
     <Container>
       <main>
-        <h2>About me</h2>
-        <p>
+        <h1 className="text-light">About me</h1>
+        <p className="text-light">
           My name is lipeiran
         </p>
       </main>
