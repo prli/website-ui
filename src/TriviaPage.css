@@ -1,0 +1,4 @@
+.trivia-card-text {
+  overflow-y: auto;
+  height: 9rem;
+}
