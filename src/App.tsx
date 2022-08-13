@@ -5,6 +5,7 @@ import ErrorNotFoundPage from './ErrorNotFoundPage';
 import AboutPage from './AboutPage';
 import HomePage from './HomePage';
 import MenuBar from './MenuBar';
+import TriviaPage from './TriviaPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="about" element={<AboutPage />} />
+        <Route path="trivia" element={<TriviaPage />} />
         <Route path="*" element={<ErrorNotFoundPage />} />
       </Routes>
     </div>
