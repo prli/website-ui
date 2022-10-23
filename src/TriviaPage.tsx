@@ -5,8 +5,9 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ReactCardFlip from 'react-card-flip';
 import Col from 'react-bootstrap/Col';
+import { fetchTrivia } from './api-calls';
 
-interface Trivia {
+export interface Trivia {
   id: string;
   question: string;
   answer: string;
@@ -22,11 +23,14 @@ function TriviaPage() {
 
   function getTrivia() {
     setIsFlipped(false);
-    setTrivia({
-      'id': `mock trivia id ${new Date().getTime()}`,
-      'question': `mock trivia question ${new Date().getTime()}`,
-      'answer': `mock trivia answer very long very long very long very long very long very long very long very long very long very long very long very long very long very long very long very long very long very long very long very long very long very long very long text very long text very long textvery long textvery long text very long text very long text very long text very long textvery long textvery long text very long text ${new Date().getTime()}`,
-    });
+    fetchTrivia()
+      .then((res) => {
+        console.log(res);
+        setTrivia(res[0]);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   return (
@@ -35,27 +39,29 @@ function TriviaPage() {
         <h1 className="text-light">Welcome to trivia!</h1>
         <Col>
           <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-            <Card bg='primary'>
+            <Card bg="primary">
               <Card.Body>
                 <Card.Title>{trivia.id}</Card.Title>
-                <Card.Text className='trivia-card-text'>
-                  {trivia.question}
-                </Card.Text>
-                <Button variant="secondary" className='mt-auto' onClick={() => setIsFlipped(!isFlipped)}>Click to flip</Button>
+                <Card.Text className="trivia-card-text">{trivia.question}</Card.Text>
+                <Button variant="secondary" className="mt-auto" onClick={() => setIsFlipped(!isFlipped)}>
+                  Click to flip
+                </Button>
               </Card.Body>
             </Card>
-            <Card bg='success'>
+            <Card bg="success">
               <Card.Body>
                 <Card.Title>{trivia.id}</Card.Title>
-                <Card.Text className='trivia-card-text'>
-                  {trivia.answer}
-                </Card.Text>
-                <Button variant="secondary" className='mt-auto' onClick={() => setIsFlipped(!isFlipped)}>Click to flip</Button>
+                <Card.Text className="trivia-card-text">{trivia.answer}</Card.Text>
+                <Button variant="secondary" className="mt-auto" onClick={() => setIsFlipped(!isFlipped)}>
+                  Click to flip
+                </Button>
               </Card.Body>
             </Card>
           </ReactCardFlip>
         </Col>
-        <Button variant="secondary" className='mt-5' onClick={() => getTrivia()}>Surprise me with a new trivia!</Button>
+        <Button variant="secondary" className="mt-5" onClick={() => getTrivia()}>
+          Surprise me with a new trivia!
+        </Button>
       </main>
     </Container>
   );
