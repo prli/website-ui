@@ -26,7 +26,9 @@ function TriviaPage() {
     fetchTrivia()
       .then((res) => {
         console.log(res);
-        setTrivia(res[0]);
+        if (res.length > 0) {
+          setTrivia(res[0]);
+        }
       })
       .catch((err) => {
         console.log(err);
