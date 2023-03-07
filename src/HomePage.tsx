@@ -1,44 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Container from 'react-bootstrap/Container';
 
+export interface TechStack {
+  name: string;
+  url: string;
+}
+
 function HomePage() {
+  const techStacks: TechStack[] = [
+    { name: 'React', url: 'https://reactjs.org' },
+    { name: 'AWS CDK', url: 'https://cdkworkshop.com/' },
+    { name: 'React-Bootstrap', url: 'https://react-bootstrap.github.io/' },
+  ];
+
   return (
     <Container>
-      <main>
-        <h1 className="text-light">Welcome to the homepage!</h1>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className="text-light">
-          Created using React and AWS CDK
-        </p>
-        <p className="text-light">
-          <a
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-        <p className="text-light">
-          <a
-            href="https://cdkworkshop.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn AWS CDK
-          </a>
-        </p>
-        <p className="text-light">
-          <a
-            href="https://react-bootstrap.github.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React-Bootstrap
-          </a>
-        </p>
+      <main className="text-light">
+        <h1>Welcome to my website!</h1>
+        <p>Created this website for fun and as an opportunity to try out different ideas and technologies.</p>
+        <hr />
+        <p>Created using the following tech stack</p>
+        <ul>
+          {techStacks.map((techStack, i) => {
+            return (
+              <li key={i}>
+                <a href={techStack.url} target="_blank" rel="noreferrer">
+                  {techStack.name}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </main>
     </Container>
   );
