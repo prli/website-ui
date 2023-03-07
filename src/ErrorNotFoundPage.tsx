@@ -5,11 +5,9 @@ import Container from 'react-bootstrap/Container';
 function ErrorNotFoundPage() {
   return (
     <Container>
-      <main>
-        <h1 className="text-light">404 Error</h1>
-        <p className="text-light">
-          Page Not Found
-        </p>
+      <main className="text-light">
+        <h1>404 Error</h1>
+        <p>Page Not Found</p>
       </main>
     </Container>
   );
