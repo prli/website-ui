@@ -57,21 +57,27 @@ function TriviaPage() {
 
   return (
     <Container>
-      <main>
-        <h1 className="text-light">Welcome to trivia!</h1>
+      <Row>
         <Col>
-          {trivias.map((trivia, i) => {
-            return (
-              <Row key={i} className="my-2">
-                <TriviaCard trivia={trivia}></TriviaCard>
-              </Row>
-            );
-          })}
-          <Button variant="secondary" className="my-5" onClick={() => getTrivia()}>
-            Surprise me with a new trivia!
+          <h1 className="text-light">Welcome to trivia!</h1>
+        </Col>
+      </Row>
+      <Row>
+        {trivias.map((trivia, i) => {
+          return (
+            <Col key={i} className="my-2" xl={6}>
+              <TriviaCard trivia={trivia}></TriviaCard>
+            </Col>
+          );
+        })}
+      </Row>
+      <Row>
+        <Col>
+          <Button variant="secondary" className="my-2 w-100" onClick={() => getTrivia()}>
+            <h1 className="text-light">Surprise me with a new trivia!</h1>
           </Button>
         </Col>
-      </main>
+      </Row>
     </Container>
   );
 }
