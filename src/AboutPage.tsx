@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Container from 'react-bootstrap/Container';
+import * as Icon from 'react-bootstrap-icons';
 
 function AboutPage() {
   return (
@@ -16,8 +17,13 @@ function AboutPage() {
           countries outside of their native language. My team also provides machine learning platforms to serve
           scientists to train their natural language models.
         </p>
-        <a href="https://www.amazon.jobs/en/landing_pages/customer-engagement-technology">
+        <a
+          href="https://www.amazon.jobs/en/landing_pages/customer-engagement-technology"
+          target="_blank"
+          rel="noreferrer"
+        >
           https://www.amazon.jobs/en/landing_pages/customer-engagement-technology
+          <Icon.BoxArrowUpRight className="ms-1" />
         </a>
         <hr />
         <p>
@@ -25,7 +31,10 @@ function AboutPage() {
           built and provided enterprise services, software, management tools, and support for end-to-end AI and digital
           twin workflows.
         </p>
-        <a href="https://www.nvidia.com/en-us/gpu-cloud/">https://www.nvidia.com/en-us/gpu-cloud/</a>
+        <a href="https://www.nvidia.com/en-us/gpu-cloud/" target="_blank" rel="noreferrer">
+          https://www.nvidia.com/en-us/gpu-cloud/
+          <Icon.BoxArrowUpRight className="ms-1" />
+        </a>
         <hr />
       </main>
     </Container>

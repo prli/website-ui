@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Container from 'react-bootstrap/Container';
+import * as Icon from 'react-bootstrap-icons';
 
 export interface TechStack {
   name: string;
@@ -27,6 +28,7 @@ function HomePage() {
               <li key={i}>
                 <a href={techStack.url} target="_blank" rel="noreferrer">
                   {techStack.name}
+                  <Icon.BoxArrowUpRight className="ms-1" />
                 </a>
               </li>
             );
