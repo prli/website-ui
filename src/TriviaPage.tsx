@@ -3,6 +3,7 @@ import './TriviaPage.css';
 import ReactCardFlip from 'react-card-flip';
 import { fetchTrivia } from './api-calls';
 import { Container, Button, Card, Col, Row } from 'react-bootstrap';
+import LoadingIcons from 'react-loading-icons';
 
 export interface Trivia {
   id: string;
@@ -12,19 +13,25 @@ export interface Trivia {
 
 function TriviaPage() {
   const [trivias, setTrivias] = useState<Trivia[]>([] as Trivia[]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     getTrivia();
   }, []);
 
   function getTrivia() {
+    setIsLoading(true);
     fetchTrivia()
       .then((res) => {
         console.log(res);
         setTrivias(res);
       })
       .catch((err) => {
+        setIsLoading(false);
         console.log(err);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }
 
@@ -73,8 +80,8 @@ function TriviaPage() {
       </Row>
       <Row>
         <Col>
-          <Button variant="secondary" className="my-2 w-100" onClick={() => getTrivia()}>
-            <h1 className="text-light">Surprise me with a new trivia!</h1>
+          <Button variant="secondary" className="my-2 w-100" disabled={isLoading} onClick={() => getTrivia()}>
+            <h1 className="text-light">{isLoading ? <LoadingIcons.ThreeDots /> : 'Surprise me with new trivia!'}</h1>
           </Button>
         </Col>
       </Row>
